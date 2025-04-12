@@ -504,9 +504,11 @@ a:hover {
   }
 
   .grid {
-    grid-template-columns: 1fr;
     gap: 12px;
-  }
+    display: flex
+;
+    flex-wrap: wrap;
+}
 
   .card {
     font-size: 13px;
@@ -545,4 +547,118 @@ a:hover {
     font-size: 14px;
     padding: 10px 12px;
   }
+}
+
+
+
+
+
+.navbar {
+  background: rgba(0, 51, 102, 0.65);
+  border-radius: 1.5rem;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  color: var(--highlight);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 1rem;
+  z-index: 100;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+  border: 1px solid rgba(255, 165, 0, 0.4);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(to right, var(--accent), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.menu-btn.open {
+  transform: rotate(90deg);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-links li a {
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--dark-bg);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 165, 0, 0.4);
+}
+
+.nav-links li a:hover {
+  background: var(--highlight);
+  color: var(--primary-dark);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 1rem;
+    right: 1rem;
+    background: rgba(0, 51, 102, 0.95);
+    border-radius: 1rem;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    display: none;
+    animation: fadeSlide 0.3s ease-out forwards;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.active-link {
+  background: #FFF !important;
+  /* color: #fff !; */
+  box-shadow: 0 0 8px #ffa500;
 }
