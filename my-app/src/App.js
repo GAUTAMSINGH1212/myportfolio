@@ -1,235 +1,176 @@
 import React from "react";
 import "./App.css";
 import Imagepro from "./image/py2.jpg";
-import { useState } from "react";
-const Portfolio = () => {
-  const [hoveredSkill, setHoveredSkill] = useState(null);
-  const skills = [
-    { name: "HTML & CSS", details: "Building structured and styled web pages." },
-    { name: "Tailwind CSS", details: "Utility-first CSS framework for responsive design." },
-    { name: "JavaScript", details: "Adding interactivity and dynamic functionality to web apps." },
-    { name: "React", details: "Building reusable UI components with React.js." },
-    { name: "Next.js", details: "React framework for server-side rendering and static site generation." },
-    { name: "Node.js", details: "Backend JavaScript runtime for scalable web applications." },
-    { name: "Responsive Web Design", details: "Ensuring websites work on all screen sizes." },
-    { name: "WordPress (Basic)", details: "Managing content and building websites with WordPress." },
-    { name: "Critical Thinking", details: "Analyzing problems and finding effective solutions." },
-    { name: "Management Skills", details: "Leading teams and organizing workflows efficiently." },
-  ];
+
+const Section = ({ title, children, buttonText = "Explore" }) => (
+  <section className="section">
+    {title && <h2 className="section-title">{title}</h2>}
+    <div className="section-content">{children}</div>
+    <div className="section-button-wrapper">
+      <button className="section-button">{buttonText}</button>
+    </div>
+  </section>
+);
+
+const Card = ({ children }) => <div className="card">{children}</div>;
+
+export default function App() {
   return (
-    <div className="">
-      {/* Welcome Section */}
-      <section>
-        <header className=" prf-header-section py-12 px-6 ">
-          <div className="prf-header-section-inner">
-            <div className="pro-innovation-section">
-              <h1 className="fade-in slide-left">Hi, I'm</h1>
-              <h1 className="fade-in name">
-                <span className="letter">G</span>
-                <span className="letter">a</span>
-                <span className="letter">u</span>
-                <span className="letter">t</span>
-                <span className="letter">a</span>
-                <span className="letter">m</span>
-                <span className="letter space"></span>{" "}
-                {/* Space Between Words */}
-                <span className="letter">K</span>
-                <span className="letter">u</span>
-                <span className="letter">m</span>
-                <span className="letter">a</span>
-                <span className="letter">r</span>
-              </h1>
-
-              <p className="fade-in delay-1">
-                Creative Web Designer & Developer
-              </p>
-              <p className="fade-in delay-2">
-                Bringing design to life with modern web technologies,
-                user-focused solutions, and a passion for innovation.
-              </p>
-            </div>
-
-            <div className="innovation-section">
-              <div className="innovation-section-inner">
-                <img className="" src={Imagepro} alt="Imagepro" />
-              </div>
+    <div className="portfolio-container">
+      <Section>
+        <div className="id-card">
+          <img src={Imagepro} alt="Gautam" className="profile-image" />
+          <div className="id-content">
+            <h1 className="greeting">
+              Hi, I'm <span className="highlight-name">Gautam Kumar</span>
+            </h1>
+            <p className="subtitle">Creative Web Designer & Developer</p>
+            <p className="id-bio">
+              Bringing design to life with modern technologies and passion.
+            </p>
+            <div className="id-info">
+              <p><strong>📞 Mobile:</strong> +91 9389768289</p>
+              <p><strong>📧 Email:</strong> <a href="mailto:gk247126@gmail.com">gk247126@gmail.com</a></p>
+              <p><strong>🔗 GitHub:</strong> <a href="http://github.com/GAUTAMSINGH1212" target="_blank">GAUTAMSINGH1212</a></p>
+              <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/gautam-kumar-9830aa261/" target="_blank">Gautam Kumar</a></p>
             </div>
           </div>
-        </header>
-      </section>
-
-      {/* About Me Section */}
-      <section className="py-12 px-6 Passionat-details-section ">
-        <div className=" Passionat-details-section-inner">
-          {/* <h2 className="prf-details-hedding">
-          A Passionate Web Designer from Saharanpur
-        </h2> */}
-          <div className="portfolio-welcome ">
-            <p>
-              Welcome to my portfolio! I'm Gautam Kumar. I hold a Bachelor's
-              degree in Computer Applications (BCA) from Ch. Charan Singh
-              University, completed in 2023. With a diploma in Web Development
-              and hands-on experience in the field, I specialize in crafting
-              responsive, user-friendly, and visually engaging websites.
-            </p>
-          </div>
-          <div className="portfolio-Currently-worke">
-            <p>
-              Currently, I am working at <strong>Ajiva Infotech Pvt Ltd</strong>
-              , where I bring ideas to life by designing web experiences that
-              blend functionality and aesthetics. My journey also includes a
-              4-month internship, during which I honed my skills in React,
-              Node.js, and Tailwind CSS.
-            </p>
-          </div>
         </div>
-      </section>
+      </Section>
 
-      {/* Skills Section */}
-      <section className="bg-gray-200 py-12 px-6 portfolio-skills">
-      <h2 className="text-3xl font-semibold mb-6 text-center">Skills</h2>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-        {skills.map((skill, index) => (
-          <li
-            className=" bg-white p-4 rounded-lg shadow skill-item cursor-pointer text-center"
-          >
-            {skill.name}
- 
-          </li>
-        ))}
-      </ul>
-    </section>
-
-
-      {/* Education Section  #ddd4c7
-       */}
-      <section className="py-12 px-6 Education-setion ">
-        <div className=" Education-setion">
-          <div className=" Education-setion-headding">
-            <h2 className="text-3xl font-semibold mb-6 text-center">
-              Education
-            </h2>
-          </div>
-          <div className=" Education-setion-details">
-            <ul className="max-w-4xl mx-auto space-y-4">
-              <li>
-                <strong>Bachelor of Computer Application (BCA):</strong> Ch.
-                Charan Singh University (2021 - 2023)
-              </li>
-              <li>
-                <strong>12th Grade (PCM Science):</strong> Kishan Sevak Inter
-                College (2019 - 2020)
-              </li>
-              <li>
-                <strong>10th Grade (Computer Science):</strong> Kishan Sevak
-                Inter College (2017 - 2018)
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section className="bg-gray-200 py-12 px-6 Experience-Section">
-        <h2 className="text-3xl font-semibold mb-6 text-center">Experience</h2>
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-6">
-            <h3 className="text-xl font-bold">Web Designer</h3>
-            <p className="italic">
-              Ajiva Infotech Pvt Ltd (June 2024 - Present)
-            </p>
-            <ul className="list-disc ml-6 mt-2">
-              <li>
-                Designed and developed responsive websites focused on
-                exceptional user experiences.
-              </li>
-              <li>
-                Collaborated with teams to create appealing and functional web
-                interfaces.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xl font-bold">Web Development Intern</h3>
-            <p className="italic">(4-month Internship)</p>
-            <ul className="list-disc ml-6 mt-2">
-              <li>
-                Enhanced technical expertise by working on modern web
-                applications.
-              </li>
-              <li>
-                Focused on React, Node.js, and Tailwind CSS for project
-                development.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section className="py-12 px-6 Projects-Section">
-        <h2 className="text-3xl font-semibold mb-6 text-center">Projects</h2>
-        <ul className="max-w-4xl mx-auto space-y-4">
-          <li>
-            <strong>Ajiva Infotech Website:</strong> Crafted a professional and
-            modern website for Ajiva Infotech Pvt Ltd, focusing on corporate
-            branding and usability.
-          </li>
-          <li>
-            <strong>HirePros UK:</strong> Developed a responsive recruitment
-            platform for connecting employers with potential candidates.
-          </li>
-          <li>
-            <strong>Deals365Days:</strong> Designed a dynamic e-commerce
-            platform for daily deals and discounts, ensuring a seamless shopping
-            experience.
-          </li>
-          <li>
-            <strong>HJChamp:</strong> Built a sports management website for
-            tracking live tournaments and results.
-          </li>
-          <li>
-            <strong>Bass Champs Results:</strong> Created an interactive results
-            platform for a fishing competition with a focus on real-time
-            updates.
-          </li>
-        </ul>
-      </section>
-
-      {/* Hobbies Section */}
-      <section className="bg-gray-200 py-12 px-6 Hobbies-Section ">
-        <h2 className="text-3xl font-semibold mb-6 text-center">
-          Hobbies & Interests
-        </h2>
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          <li className="bg-white p-4 rounded-lg shadow">Reading Books</li>
-          <li className="bg-white p-4 rounded-lg shadow">Traveling</li>
-          <li className="bg-white p-4 rounded-lg shadow">Photography</li>
-          <li className="bg-white p-4 rounded-lg shadow">Coding</li>
-        </ul>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-12 px-6 Contact-Section">
-        <h2 className="text-3xl font-semibold mb-6 text-center">Contact Me</h2>
-        <p className="text-center text-lg">
-          Let’s bring your ideas to life! Reach out to discuss projects,
-          collaborations, or just to say hi.
+      <Section title="About Me" buttonText="Know More">
+        <p>
+          I’m Gautam Kumar, a BCA graduate from Ch. Charan Singh University (2023), with a diploma in Web Development and hands-on project experience.
         </p>
-        <div className="mt-6 text-center space-y-4">
-          <p>
-            <strong>Phone:</strong> +91 9389768289
-          </p>
-          <p>
-            <strong>Email:</strong> [gk247126@gmail.com]
-          </p>
-          <p>
-            <strong>Location:</strong> Saharanpur, Uttar Pradesh
-          </p>
+        <p>
+          I currently work at <strong>Ajiva Infotech Pvt Ltd</strong> as a Web Designer, building sleek, responsive websites using React, Node.js, and Tailwind CSS.
+        </p>
+      </Section>
+
+      <Section title="Skills" buttonText="See All Skills">
+        <div className="grid">
+          {[
+            "HTML & CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "React",
+            "Next.js",
+            "Node.js",
+            "Responsive Design",
+            "WordPress (Basic)",
+            "Critical Thinking",
+            "Management Skills"
+          ].map((skill) => (
+            <Card key={skill}>{skill}</Card>
+          ))}
         </div>
-      </section>
+      </Section>
+      <Section title="Education" buttonText="View Education">
+  <div className="education-item">
+    <div className="edu-degree">BCA</div>
+    <div className="edu-info">
+      <div className="edu-college">Ch. Charan Singh University</div>
+      <div className="edu-year">2021 – 2023</div>
+    </div>
+  </div>
+
+  <div className="education-item">
+    <div className="edu-degree">12th</div>
+    <div className="edu-info">
+      <div className="edu-college">Kishan Sevak Inter College</div>
+      <div className="edu-year">2019 – 2020</div>
+    </div>
+  </div>
+
+  <div className="education-item">
+    <div className="edu-degree">10th</div>
+    <div className="edu-info">
+      <div className="edu-college">Kishan Sevak Inter College</div>
+      <div className="edu-year">2017 – 2018</div>
+    </div>
+  </div>
+</Section>
+
+
+
+      <Section title="Experience" buttonText="View Experience">
+  <div className="experience-row">
+    <div className="exp-header">
+      <h3>Web Designer – Ajiva Infotech Pvt Ltd</h3>
+      <p className="italic">June 2024 – Present</p>
+    </div>
+    <ul className="exp-details">
+      <li>Designed responsive websites focused on user experience.</li>
+      <li>Collaborated on UI/UX designs for real-world projects.</li>
+    </ul>
+  </div>
+
+  <div className="experience-row">
+    <div className="exp-header">
+      <h3>Web Development Intern</h3>
+      <p className="italic">4-month internship</p>
+    </div>
+    <ul className="exp-details">
+      <li>Worked on projects using React, Tailwind CSS, and Node.js.</li>
+      <li>Built live applications and interfaces for real clients.</li>
+    </ul>
+  </div>
+</Section>
+
+
+      <Section title="Projects" buttonText="View Projects">
+        <ul>
+          <li><strong>Ajiva Infotech Website</strong> – Corporate brand site</li>
+          <li><strong>HirePros UK</strong> – Recruitment platform</li>
+          <li><strong>Deals365Days</strong> – E-commerce deals site</li>
+          <li><strong>HJChamp</strong> – Sports tournament tracker</li>
+          <li><strong>Bass Champs Results</strong> – Fishing competition result system</li>
+        </ul>
+      </Section>
+
+      <Section title="Hobbies & Interests" buttonText="See Hobbies">
+        <div className="grid">
+          {[
+            "📖 Reading Books",
+            "🌍 Traveling",
+            "📸 Photography",
+            "💻 Coding"
+          ].map((hobby) => (
+            <Card key={hobby}>{hobby}</Card>
+          ))}
+        </div>
+      </Section>
+      {/* <Section title="Contact Me" buttonText="Send Message">
+  <form className="contact-form">
+    <div className="form-group">
+      <label htmlFor="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required />
+    </div>
+
+    <div className="form-group">
+      <label htmlFor="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required />
+    </div>
+
+    <div className="form-group">
+      <label htmlFor="message">Message</label>
+      <textarea id="message" rows="5" placeholder="Type your message..." required></textarea>
+    </div>
+
+    <button type="submit" className="section-button">Send</button>
+  </form>
+</Section> */}
+
+      <Section title="Contact Me" buttonText="Get in Touch">
+        <p>Let’s bring your ideas to life! Reach out to collaborate or say hello.</p>
+        <div className="contact-info">
+          <p><strong>📞 Phone:</strong> +91 9389768289</p>
+          <p><strong>📧 Email:</strong> gk247126@gmail.com</p>
+          <p><strong>📍 Location:</strong> Saharanpur, Uttar Pradesh</p>
+          <p><strong>🔗 GitHub:</strong> <a href="http://github.com/GAUTAMSINGH1212/">GAUTAMSINGH1212</a></p>
+          <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/gautam-kumar-9830aa261/">Gautam Kumar</a></p>
+        </div>
+      </Section>
     </div>
   );
-};
-
-export default Portfolio;
+}
