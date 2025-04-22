@@ -27,7 +27,7 @@ export default function Navbar() {
             Home
           </a>
         </li>
-        <li>
+        {/* <li>
           <a
             href="#about"
             className={activeLink === "about" ? "active-link" : ""}
@@ -53,7 +53,7 @@ export default function Navbar() {
           >
             Projects
           </a>
-        </li>
+        </li> */}
         <li>
           <a
             href="#contact"

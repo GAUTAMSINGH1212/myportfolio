@@ -299,11 +299,17 @@ a:hover {
   box-shadow: 0 10px 30px rgba(255, 165, 0, 0.2);
   transition: all 0.3s ease-in-out;
 }
-
+.id-content{
+  display: flex;
+  justify-content: space-between;
+}
 @media (min-width: 768px) {
   .id-card {
     flex-direction: row;
     text-align: left;
+  }
+  .id-content{
+    display: block !important;
   }
 }
 
@@ -314,7 +320,7 @@ a:hover {
 .id-bio {
   font-size: 15px;
   color: var(--text-muted);
-  margin: 10px 0 20px;
+  /* margin: 10px 0 20px; */
 }
 
 .id-info p {
@@ -493,6 +499,9 @@ a:hover {
   .profile-image {
     width: 100px;
     height: 100px;
+  }
+  .id-content{
+    display: block !important;
   }
 
   .greeting {
