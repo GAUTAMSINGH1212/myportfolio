@@ -13,12 +13,14 @@
 
 
 body {
-  background: linear-gradient(135deg, var(--primary-dark), var(--dark-bg), #000);
+ 
   background-size: 400% 400%;
   animation: gradientShift 18s ease infinite;
   color: var(--text-light);
 }
-
+/* .portfolio-container{
+  background: linear-gradient(135deg, var(--primary-dark), var(--dark-bg), #000);
+} */
 
 /* Sections */
 .section {
@@ -215,8 +217,8 @@ a:hover {
 
 /* Portfolio Layout */
 .portfolio-container {
-  max-width: 1200px;
-  margin: auto;
+  /* max-width: 1200px;
+  margin: auto; */
   padding: 40px 20px;
   animation: fadeIn 1s ease-in-out both;
 }
@@ -257,7 +259,7 @@ a:hover {
 }
 
 /* Cards Grid */
-.grid {
+.portf-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
@@ -512,7 +514,7 @@ a:hover {
     font-size: 14px;
   }
 
-  .grid {
+  .portf-grid {
     gap: 12px;
     display: flex
 ;

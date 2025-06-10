@@ -1,16 +1,16 @@
-import React from "react";
-import "./App.css";
-import Imagepro from "./image/py2.jpg";
-import Header from "./compo/header";
+import React ,{ useRef } from "react";
+
+
+import Imagepro from "../image/py2.jpg";
+
 
 const Card = ({ children }) => <div className="card">{children}</div>;
 
-export default function App() {
+  const App=() =>{
   return (
     <>
-      <div className="portfolio-container">
-        <Header />
-
+      <div className="portfolio-container bg-gradient-to-r from-[#003366] to-[#ffa500]">
+     
         {/* ID Card Section */}
         <section className="section">
           <div className="id-card">
@@ -79,7 +79,7 @@ export default function App() {
 
         <section className="section">
           <h2 className="section-title">Skills</h2>
-          <div className="grid">
+          <div className="portf-grid">
             <Card>HTML & CSS</Card>
             <Card>Tailwind CSS</Card>
             <Card>JavaScript</Card>
@@ -184,7 +184,7 @@ export default function App() {
         {/* Hobbies Section */}
         <section className="section">
           <h2 className="section-title">Hobbies & Interests</h2>
-          <div className="grid">
+          <div className="portf-grid">
             <Card>📖 Reading Books</Card>
             <Card>🌍 Traveling</Card>
             <Card>📸 Photography</Card>
@@ -231,3 +231,4 @@ export default function App() {
     </>
   );
 }
+export default App

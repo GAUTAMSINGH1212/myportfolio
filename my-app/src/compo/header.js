@@ -20,16 +20,16 @@ export default function Navbar() {
       <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
         <li>
           <a
-            href="#"
+            href="/"
             className={activeLink === "home" ? "active-link" : ""}
             onClick={() => handleLinkClick("home")}
           >
             Home
           </a>
         </li>
-        {/* <li>
+        <li>
           <a
-            href="#about"
+            href="/about"
             className={activeLink === "about" ? "active-link" : ""}
             onClick={() => handleLinkClick("about")}
           >
@@ -38,22 +38,14 @@ export default function Navbar() {
         </li>
         <li>
           <a
-            href="#skills"
+            href="/topics"
             className={activeLink === "skills" ? "active-link" : ""}
             onClick={() => handleLinkClick("skills")}
           >
-            Skills
+           Js Doc
           </a>
         </li>
-        <li>
-          <a
-            href="#projects"
-            className={activeLink === "projects" ? "active-link" : ""}
-            onClick={() => handleLinkClick("projects")}
-          >
-            Projects
-          </a>
-        </li> */}
+       
         <li>
           <a
             href="#contact"
